@@ -1,0 +1,20 @@
+{
+  "id": "AI-001",
+  "area": "ai_search_readiness",
+  "priority": "should_improve",
+  "title": "Important product answer is not visible in crawlable text",
+  "evidence": [
+    "The visible page answers compatibility only inside an image.",
+    "Rendered HTML does not include equivalent text near the product details."
+  ],
+  "impact": "Google may have less context for complex product questions and snippet generation.",
+  "recommendation": "Add visible text that explains compatibility, limitations and use cases near the product details.",
+  "owner": "content",
+  "effort": "low",
+  "validation": "Inspect rendered HTML and monitor Search Console queries for compatibility-related impressions after recrawl.",
+  "confidence": "medium",
+  "source_agent": "ai-search-readiness-agent",
+  "open_questions": [
+    "Are there verified compatibility specs from the product team?"
+  ]
+}

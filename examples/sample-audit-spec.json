@@ -1,0 +1,35 @@
+{
+  "objective": "Evaluate whether priority product pages are ready for Google Search and AI Search features.",
+  "site": "https://example.com",
+  "site_type": "ecommerce",
+  "scope": "ai_search_readiness",
+  "urls": [
+    "https://example.com/products/example-product"
+  ],
+  "data_available": [
+    "html",
+    "rendered_html",
+    "search_console"
+  ],
+  "constraints": [
+    "No production changes during audit",
+    "Recommendations must separate dev and marketing work"
+  ],
+  "subagents": [
+    "technical_seo",
+    "content_quality",
+    "ai_search_readiness",
+    "structured_data",
+    "measurement",
+    "synthesis"
+  ],
+  "output_format": "mixed",
+  "success_criteria": [
+    "Identify blockers for crawling, indexing and snippet eligibility",
+    "Identify content improvements for AI Search readiness",
+    "Produce a prioritized action plan with validation steps"
+  ],
+  "open_questions": [
+    "Which countries and languages are priority?"
+  ]
+}

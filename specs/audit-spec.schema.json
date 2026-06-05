@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ba-lison/google-search-seo-ai-agent/specs/audit-spec.schema.json",
+  "title": "Audit Spec",
+  "type": "object",
+  "required": ["objective", "site", "scope", "output_format", "success_criteria"],
+  "properties": {
+    "objective": {
+      "type": "string",
+      "description": "What the audit should answer or improve."
+    },
+    "site": {
+      "type": "string",
+      "description": "Domain, product, app, or site being audited."
+    },
+    "site_type": {
+      "type": "string",
+      "enum": ["ecommerce", "saas", "marketplace", "content", "institutional", "local_business", "docs", "unknown", "other"]
+    },
+    "scope": {
+      "type": "string",
+      "enum": ["full_site", "single_url", "template", "traffic_drop", "ai_search_readiness", "structured_data", "content_quality", "technical_seo", "custom"]
+    },
+    "urls": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "data_available": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["search_console", "analytics", "crawl", "logs", "source_code", "screenshots", "html", "rendered_html", "none", "other"]
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "subagents": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["technical_seo", "content_quality", "ai_search_readiness", "structured_data", "measurement", "synthesis"]
+      }
+    },
+    "output_format": {
+      "type": "string",
+      "enum": ["executive_report", "technical_backlog", "marketing_plan", "dev_backlog", "mixed"]
+    },
+    "success_criteria": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "open_questions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

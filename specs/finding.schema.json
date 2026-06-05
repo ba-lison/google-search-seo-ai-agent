@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ba-lison/google-search-seo-ai-agent/specs/finding.schema.json",
+  "title": "SEO Finding",
+  "type": "object",
+  "required": ["id", "area", "priority", "title", "evidence", "impact", "recommendation", "validation", "confidence"],
+  "properties": {
+    "id": { "type": "string" },
+    "area": {
+      "type": "string",
+      "enum": ["technical_seo", "content_quality", "ai_search_readiness", "structured_data", "measurement", "strategy"]
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["must_fix", "should_improve", "opportunity", "monitor"]
+    },
+    "title": { "type": "string" },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "impact": { "type": "string" },
+    "recommendation": { "type": "string" },
+    "owner": {
+      "type": "string",
+      "enum": ["dev", "marketing", "content", "product", "leadership", "seo", "unknown"]
+    },
+    "effort": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "unknown"]
+    },
+    "validation": { "type": "string" },
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "source_agent": { "type": "string" },
+    "open_questions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

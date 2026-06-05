@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ba-lison/google-search-seo-ai-agent/specs/agent-handoff.schema.json",
+  "title": "Agent Handoff",
+  "type": "object",
+  "required": ["audit_spec", "target_agent", "task", "inputs", "expected_output"],
+  "properties": {
+    "audit_spec": {
+      "type": "object",
+      "description": "Audit spec object matching audit-spec.schema.json."
+    },
+    "target_agent": {
+      "type": "string",
+      "enum": ["technical_seo", "content_quality", "ai_search_readiness", "structured_data", "measurement", "synthesis"]
+    },
+    "task": { "type": "string" },
+    "inputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "known_constraints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expected_output": {
+      "type": "string",
+      "enum": ["findings", "questions", "validation_plan", "report_section"]
+    },
+    "deadline_or_depth": {
+      "type": "string",
+      "enum": ["quick", "standard", "deep"]
+    }
+  },
+  "additionalProperties": false
+}
